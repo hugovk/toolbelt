@@ -12,10 +12,10 @@ jobs:
 
     steps:
       - name: "Checkout repository"
-        uses: "actions/checkout@v3"
+        uses: "actions/checkout@v4"
 
       - name: "Setup Python"
-        uses: "actions/setup-python@v4"
+        uses: "actions/setup-python@v5"
         with:
           python-version: "3.x"
           cache: "pip"
@@ -41,10 +41,10 @@ jobs:
     name: ${{ fromJson('{"macos-latest":"macOS","windows-latest":"Windows","ubuntu-latest":"Ubuntu"}')[matrix.os] }} ${{ matrix.python-version }}
     steps:
       - name: "Checkout repository"
-        uses: "actions/checkout@v3"
+        uses: "actions/checkout@v4"
 
       - name: "Setup Python ${{ matrix.python-version }}"
-        uses: "actions/setup-python@v4"
+        uses: "actions/setup-python@v5"
         with:
           python-version: ${{ matrix.python-version }}
           # Fails on Python 2 + Windows
